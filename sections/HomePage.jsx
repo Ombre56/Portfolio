@@ -39,21 +39,21 @@ const HomeSection = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-    @media screen and (max-width: 360px){
+    @media screen and (max-width: 996px){
       flex-direction: column;
     }
 `;
 
 const LeftSide = styled.div`
   margin: 14.43rem 0 0 5.62rem;
-    @media screen and (max-width: 360px){
+    @media screen and (max-width: 996px){
       margin: 2.813rem 6.88rem 3.813rem 2.56rem;
     } 
 `;
 
 const RightSide = styled.div`
   align-self: center;
-    @media screen and (max-width: 360px){
+    @media screen and (max-width: 996px){
       padding: 0 31px;
     }
 `;
@@ -69,7 +69,7 @@ const Title = styled.h1`
     margin: 0;
     padding-left: 1.25rem;
   }
-    @media screen and (max-width: 360px){
+    @media screen and (max-width: 996px){
       flex-direction: column;
       padding-left: 0;
     }
@@ -81,7 +81,7 @@ const SubTitle = styled.p`
   line-height: 2.8125rem;
   margin: 0;
   color: #EE5359;
-    @media screen and (max-width: 360px){
+    @media screen and (max-width: 996px){
       font-size: 1.25rem;
     }
 `;
