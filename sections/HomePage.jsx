@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Image from 'next/image'
+import Link from 'next/link';
 
 function HomePage() {
   return (
@@ -8,11 +9,21 @@ function HomePage() {
       <LeftSide>
         <Title>Hi, I&apos;m <p id="title-red" style={{color: '#D40008'}}>Krystian</p></Title>
         <SubTitle>Frontend Developer</SubTitle>
-        <CVButton><p>Download CV</p></CVButton>
+        <CVButton>
+          <Link href='/about'>
+            <p>About me</p>
+          </Link>
+        </CVButton>
       </LeftSide>
       
       <RightSide>
-        <Image src="/images/blob.svg" width={534} height={460} alt="Blob"></Image>
+        <Image
+          src="/images/programming-image.svg"
+          width={628}
+          height={628}
+          alt="Programming Image"
+          priority
+        ></Image>
       </RightSide>
     </HomeSection>
   )
@@ -28,18 +39,26 @@ const HomeSection = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+    @media screen and (max-width: 360px){
+      flex-direction: column;
+    }
 `;
 
 const LeftSide = styled.div`
   margin: 14.43rem 0 0 5.62rem;
+    @media screen and (max-width: 360px){
+      margin: 2.813rem 6.88rem 3.813rem 2.56rem;
+    } 
 `;
 
 const RightSide = styled.div`
-  margin-top: 16.75rem;
+  align-self: center;
+    @media screen and (max-width: 360px){
+      padding: 0 31px;
+    }
 `;
 
 const Title = styled.h1`
-  font-family: 'Merriweather Sans';
   font-weight: 700;
   font-size: 4rem;
   line-height: 5rem;
@@ -50,15 +69,21 @@ const Title = styled.h1`
     margin: 0;
     padding-left: 1.25rem;
   }
+    @media screen and (max-width: 360px){
+      flex-direction: column;
+      padding-left: 0;
+    }
 `;
 
 const SubTitle = styled.p`
-  font-family: 'Merriweather Sans';
   font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.8125rem;
   margin: 0;
   color: #EE5359;
+    @media screen and (max-width: 360px){
+      font-size: 1.25rem;
+    }
 `;
 
 const CVButton = styled.div`
@@ -69,11 +94,12 @@ const CVButton = styled.div`
   border-radius: 37px;
   margin-top: 3.375rem;
   text-align: center;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 41px #9D0208);
   p{
-    font-family: 'Merriweather Sans';
     font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
     margin: 0;
     padding-top: .75rem;
   }
