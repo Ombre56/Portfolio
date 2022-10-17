@@ -14,9 +14,6 @@ export default function Home() {
         <HomePage />
       </main>
 
-      {/* <footer>
-          Copyright © by Ombre
-      </footer> */}
     </>
   )
 }
