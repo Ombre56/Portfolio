@@ -9,11 +9,11 @@ function HomePage() {
       <LeftSide>
         <Title>Hi, I&apos;m <p id="title-red" style={{color: '#D40008'}}>Krystian</p></Title>
         <SubTitle>Frontend Developer</SubTitle>
-        <CVButton>
+        <Button>
           <Link href='/about'>
             <p>About me</p>
           </Link>
-        </CVButton>
+        </Button>
       </LeftSide>
       
       <RightSide>
@@ -31,31 +31,29 @@ function HomePage() {
 
 export default HomePage;
 
-const HomeSection = styled.section`
+const HomeSection = styled.div`
   width: 100%;
-  min-height: 100vh;
-  color: #FFFFFF;
-  background: #001730;
+  height: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
     @media screen and (max-width: 996px){
       flex-direction: column;
+      justify-content: center;
     }
 `;
 
 const LeftSide = styled.div`
+  align-self: flex-start;
   margin: 14.43rem 0 0 5.62rem;
     @media screen and (max-width: 996px){
-      margin: 2.813rem 6.88rem 3.813rem 2.56rem;
+      margin: 3rem 0 2rem 0;
+      align-self: center;
     } 
 `;
 
 const RightSide = styled.div`
   align-self: center;
-    @media screen and (max-width: 996px){
-      padding: 0 31px;
-    }
 `;
 
 const Title = styled.h1`
@@ -83,10 +81,11 @@ const SubTitle = styled.p`
   color: #EE5359;
     @media screen and (max-width: 996px){
       font-size: 1.25rem;
+      text-align: center;
     }
 `;
 
-const CVButton = styled.div`
+const Button = styled.div`
   width: 165px;
   height: 43.92px;
   color: #FFFFFF;
@@ -103,4 +102,7 @@ const CVButton = styled.div`
     margin: 0;
     padding-top: .75rem;
   }
+    @media screen and (max-width: 996px){
+      margin: 3.375rem 3rem 0 3rem;
+    }
 `;
