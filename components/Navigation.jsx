@@ -68,6 +68,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1.25rem 0;
+  box-shadow: 0px 4px 17px 1px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s ease-in-out;
   @media screen and (max-width: 800px){
     width: 12.3125rem;
@@ -137,7 +138,6 @@ const Nav = styled.ul`
   flex-direction: column;
   justify-content: center;
   padding-left: 3.75rem;
-  cursor: pointer;
   p{
     margin: 0;
   }
@@ -148,6 +148,7 @@ const Nav = styled.ul`
     display: flex;
     align-items: center;
     gap: .8125rem;
+    cursor: pointer;
   }
   path {
     stroke: rgb(255, 255, 255);
