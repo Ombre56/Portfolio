@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import AboutPage from '../sections/AboutPage';
 
-export default function Home() {
+export default function About() {
   return (
     <Layout>
       <AboutPage />
