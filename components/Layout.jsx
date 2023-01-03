@@ -20,12 +20,12 @@ const Layout = ({ children }) => {
 
       <Container>
         <Navigation open={open} handleOpen={handleOpen} />
-        <div>
-          <NavButton>
-            <GiHamburgerMenu onClick={handleOpen} />
+        <Content>
+          <NavButton onClick={handleOpen}>
+            <GiHamburgerMenu />
           </NavButton>
           {children}
-        </div>
+        </Content>
       </Container>
 
     </>
@@ -45,18 +45,25 @@ const Container = styled.main`
   }
 `;
 
+const Content = styled.div`
+  @media screen and (max-width: 800px){
+    padding: 1.25rem 0 0 1.25rem;
+  }
+`;
+
 const NavButton = styled.button`
   width: 34px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
   border: 1px solid #FFFFFF;
   border-radius: 8px;
-  margin: 1.25rem 0 0 1.25rem;
   cursor: pointer;
   background: none;
   color: #FFFFFF;
+  path,svg{
+    width: 17px;
+    height: 20px;
+  }
   @media screen and (min-width: 800px){
     display: none;
   }
