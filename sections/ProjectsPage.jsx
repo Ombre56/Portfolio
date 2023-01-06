@@ -17,7 +17,7 @@ const ProjectsSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 5.0625rem 0 0 5.25rem;
+  padding: 2.75rem 0 0 5.25rem;
     @media screen and (max-width: 800px){
       align-items: center;
       padding: 2rem 0 0 0;
