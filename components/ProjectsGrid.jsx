@@ -11,7 +11,14 @@ export default function ProjectsGrid() {
         return (
           <Grid key={id}>
             <h2><TiArrowRightThick className="arrow"/> {title}</h2>
-            <Url><MdOutlineLink className="link" /> {url}</Url>
+            <Url>
+              <MdOutlineLink className="link" />
+              <a
+                href={url}
+                target="_blank"
+                rel='noreferrer'
+              >{url}</a>
+            </Url>
             <div className="image-container">
               <Image
                 src={image}
@@ -22,7 +29,7 @@ export default function ProjectsGrid() {
               />
             </div>
             <Technology>
-              {technology}
+              <p>Technology used:</p> <TiArrowRightThick className="arrow"/> {technology}
             </Technology>
           </Grid>
         )
@@ -61,9 +68,15 @@ const Grid = styled.div`
 
 const Url = styled.p`
   color: #FF7E84;
+  a{
+    padding-left: .9375rem;
+  }
 `;
 
 const Technology = styled.div`
   font-weight: bold;
-  padding-left: 1.25rem;
+  /* padding-left: 1.25rem; */
+  p{
+    font-size: 1.25rem;
+  }
 `;
