@@ -95,12 +95,20 @@ const Button = styled.div`
   text-align: center;
   cursor: pointer;
   filter: drop-shadow(0px 0px 41px #9D0208);
+  transition: all 0.3s ease-in-out;
   p{
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.25rem;
     margin: 0;
     padding-top: .75rem;
+  }
+  &:hover{
+    background: #FFF;
+    border: 2px solid #9D0208;
+    p,svg{
+      color: #9D0208;
+    }
   }
     @media screen and (max-width: 996px){
       margin: 3.375rem 3rem 0 3rem;
