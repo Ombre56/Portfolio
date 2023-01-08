@@ -7,22 +7,24 @@ export default function ContactPage() {
     <ContactSection>
       <Title>Contact with me</Title>
       <Links>
-        <BsGithub />
-        <a
-          href="https://github.com/Ombre56"
-          target="_blank"
-          rel='noreferrer'
-        >https://github.com/Ombre56</a>
-      </Links><br />
-      <Links>
-        <BsLinkedin />
-        <a
-          href="https://www.linkedin.com/in/krystian-heluszka-2b056a180/"
-          target="_blank"
-          rel='noreferrer'
-        >https://www.linkedin.com/in/krystian-heluszka-2b056a180/</a>
+        <div className="link">
+          <BsGithub />
+          <a
+            href="https://github.com/Ombre56"
+            target="_blank"
+            rel='noreferrer'
+          >https://github.com/Ombre56</a>
+        </div>
+        <br />
+        <div className="link">
+          <BsLinkedin />
+          <a
+            href="https://www.linkedin.com/in/krystian-heluszka-2b056a180/"
+            target="_blank"
+            rel='noreferrer'
+          >https://www.linkedin.com/in/krystian-heluszka-2b056a180/</a>
+        </div>
       </Links>
-
       <ContactForm />
     </ContactSection>
   )
@@ -37,7 +39,9 @@ const ContactSection = styled.div`
   align-items: flex-start;
   padding: 2.75rem 0 0 5.25rem;
     @media screen and (max-width: 800px){
-      padding: 2rem 0 0 2.5rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
     }
 `;
 
@@ -59,7 +63,7 @@ const Title = styled.h1`
 `;
 
 const Links = styled.div`
-  display: flex;
+  display: grid;
   gap: 10px;
   svg{
     color: #9D0208;
@@ -69,5 +73,9 @@ const Links = styled.div`
   }
   a:hover{
     color: #9D0208;
+  }
+  .link{
+    display: flex;
+    gap: 10px;
   }
 `;
