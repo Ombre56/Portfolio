@@ -7,7 +7,7 @@ export default function AboutPage() {
     <AboutSection>
       <LeftSide>
         <Title>About me</Title>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <p>I am a beginner Front-End Developer. I like to learn new technologies and apply them to my projects to familiarize myself with them. My passion is web development, and the gym, which, aside from the exercise itself, is an escape from everyday life for me.</p>
       </LeftSide>
       <RightSide>
         <Image
@@ -39,15 +39,15 @@ const LeftSide = styled.div`
   align-self: flex-start;
   padding-top: 14.43rem;
   p{
-    width: 534px;
+    width: auto;
     font-family: 'Merriweather Sans';
     font-size: 24px;
     text-align: justify;
   }
     @media screen and (max-width: 996px){
-      padding: 3rem 0 2rem 0;
+      padding: 3rem 1rem 2rem 0;
       align-self: center;
-      max-width: 360px;
+      max-width: auto;
       p{
         max-width: 360px;
       }
