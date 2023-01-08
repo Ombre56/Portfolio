@@ -1,21 +1,31 @@
 import { MdSend } from "react-icons/md";
 import styled from "styled-components"
 import emailjs from '@emailjs/browser';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function ContactForm() {
   const form = useRef();
+  const [error, setError] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    validate();
-    emailjs.sendForm('service_gsfd15y', 'template_yajb9ph', form.current, 'F28Fm7PYhhQjiv8W7')
-      .then((result) => {
-        console.log(result.text);
-        console.log('Message sent!')
-      }, (error) => {
-          console.log(error.text);
-      });
+
+    const fullName = form.current.fullName.value;
+    const email = form.current.email.value;
+    const message = form.current.message.value;
+
+    if ((fullName && email && message) === "") {
+      setError(!error)
+    } else {
+      emailjs.sendForm('service_gsfd15y', 'template_yajb9ph', form.current, 'F28Fm7PYhhQjiv8W7')
+        .then((result) => {
+          console.log(result.text);
+          console.log('Message sent!')
+        }, (error) => {
+            console.log(error.text);
+        });
+      setError(!error)
+    }
     form.current.reset();
   };
 
@@ -28,21 +38,20 @@ export default function ContactForm() {
             <input
               type="text"
               name="fullName"
-              required
               maxLength={20}
               placeholder="Full Name"
-              title="This field is mandatory!"
             />
+            {error ? <span>This field is mandatory!</span> : null}
           </div>
           <div className="input-container">
             <input
-              type="email"
+              type="text"
               name="email"
-              required
               id="email"
               maxLength={20}
               placeholder="email"
             />
+            {error && <span>This field is mandatory!</span>}
           </div>
         </Inputs>
 
@@ -51,9 +60,9 @@ export default function ContactForm() {
             name="message"
             cols="50"
             rows="15"
-            required
             placeholder="Message"
           />
+          {error && <span>This field is mandatory!</span>}
         </div>
         
         <Button><p>SEND</p> <MdSend/></Button>
