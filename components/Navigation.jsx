@@ -50,7 +50,7 @@ export default function Navigation({open, handleOpen}) {
         </li>
       </Nav>
       <Button>
-        <a href="https://drive.google.com/file/d/1WCvsyaF0WwUoWCXjlIOBjCjSav1As1bP/view?usp=sharing" download target="_blank" rel='noreferrer'>
+        <a href="https://drive.google.com/file/d/1CuO-MVbvtBuc2MFsk_W3IPlyxcZw9KUe/view?usp=drivesdk" download target="_blank" rel='noreferrer'>
             <p>Download CV</p>
         </a>
       </Button>
